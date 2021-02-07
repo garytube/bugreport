@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecosia</title>
+  <style>
+    @font-face {
+      font-family: 'camptonbold_demo';
+      src: url('campton-bold.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      color: #36aab8;
+      font-family: camptonbold_demo, helvetica, arial, sans-serif;
+    }
+
+    #background__video {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      z-index: -1;
+    }
+
+    #screen_one {
+      opacity: 0;
+      text-align: center;
+      width: 76%;
+      margin: auto;
+      transition: all 1s ease;
+    }
+
+    .search__box {
+      bottom: 300px;
+      width: 650px;
+      border: 6px solid rgb(233 233 233);
+      margin: 0 auto;
+      border-radius: 2rem;
+      padding: 2rem 2rem 1rem 2rem;
+      font-size: 52px;
+      background: rgba(255, 255, 255, 0.8);
+      opacity: 0;
+
+    }
+
+    .counter {
+      color: #36acb8;
+      font-size: 7vh;
+      display: block;
+      font-weight: bold;
+      text-align: center;
+
+    }
+
+    .claim {
+      font-size: 3vh;
+      color: #353535;
+      margin-top: 0;
+    }
+
+    .fadeIn {
+      animation: fadeIn .8s .7s ease forwards;
+    }
+
+    .screenOne {
+      animation: screen1 .8s 1s ease forwards;
+    }
+
+    .screenTwo {
+      animation: screen2 .7s ease forwards;
+    }
+
+    @keyframes screen1 {
+      0% {
+        transform: translateY(1220px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(1170px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes screen2 {
+      0% {
+        transform: translateY(1000px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(880px);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="screen_one">
+    <div class="counter">
+      119,066,829
+    </div>
+    <div class="claim">
+      Bäume wurden von Ecosia-Nutzern&nbsp;gepflanzt
+    </div>
+  </div>
+
+
+  <div id="screen_two" class="search__box">
+    <span class="search__string">Schwubbelparty wann?</span>
+  </div>
+
+
+  <video src="background.mp4" muted preload="auto" id="background__video"></video>
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>
