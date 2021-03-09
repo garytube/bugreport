@@ -19,7 +19,7 @@ const suchen = [
   'Ist die Havel See oder Fluss',
   'Wie heißt der Alex Turm richtig?',
   'An welchem Flughafen kann man hier jetzt fliegen?',
-  
+
 ]
 
 
@@ -28,33 +28,45 @@ const randomSearchString = () => {
   searchString.innerText = suchText
 }
 
- let trees = 117868906
+let trees = 0
+
 
 fetch(PROXY + ECOSIA_COUNTER)
-.then(res => res.json())
-.then(data => {
-  trees = data.count
-  counter.innerText = trees
-})
+  .then(res => res.json())
+  .then(data => {
+    trees = data.count
+    counter.innerText = chunks(trees)
+    console.log("trees", trees)
+  })
 
-.catch(_ => counter.innerText = '117868906')
+  .catch(_ => counter.innerText = '117868906')
+
+/**
+ * 
+ * @param {number} number 
+ * @returns 
+ */
+function chunks(number) {
+  return number.toString().match(/.{1,3}/g).join('.')
+}
 
 
 function BroadSignPlay() {
+  console.log("play")
   backgroundVideo.play()
   randomSearchString()
   showScreenOne()
-setTimeout(() => {
-  showScreenTwo()
-}, 4000);
+  // setTimeout(() => {
+  //   showScreenTwo()
+  // }, 4000);
 }
 
 const showScreenOne = () => {
   screenOne.classList.add('screenOne')
-  setTimeout(() => screenOne.classList.remove('screenOne'), 4000);
 }
 
 const showScreenTwo = () => {
+  screenOne.classList.remove('screenOne')
   screenTwo.classList.add('screenTwo')
 }
 

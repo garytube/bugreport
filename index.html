@@ -8,9 +8,16 @@
   <title>Ecosia</title>
   <style>
     @font-face {
-      font-family: 'camptonbold_demo';
-      src: url('campton-bold.woff') format('woff');
+      font-family: 'ecosia';
+      src: url('font/f1.woff2') format('woff2');
       font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'ecosia';
+      src: url('font/f2.woff2') format('woff2');
+      font-weight: 300;
       font-style: normal;
     }
 
@@ -22,7 +29,7 @@
       height: 100vh;
       position: relative;
       color: #36aab8;
-      font-family: camptonbold_demo, helvetica, arial, sans-serif;
+      font-family: 'ecosia', helvetica, arial, sans-serif;
     }
 
     #background__video {
@@ -56,17 +63,19 @@
 
     .counter {
       color: #36acb8;
-      font-size: 7vh;
+      font-size: 120px;
+      line-height: 120px;
       display: block;
-      font-weight: bold;
+      font-weight: normal;
       text-align: center;
 
     }
 
     .claim {
-      font-size: 3vh;
+      font-size: 52px;
       color: #353535;
       margin-top: 0;
+      font-weight: 300;
     }
 
     .fadeIn {
@@ -111,16 +120,16 @@
 
   <div id="screen_one">
     <div class="counter">
-      119,066,829
+      121197606
     </div>
     <div class="claim">
-      Bäume wurden von Ecosia-Nutzern&nbsp;gepflanzt
+      Bäume wurden von <br> Ecosia-Nutzer*innen gepflanzt
     </div>
   </div>
 
 
   <div id="screen_two" class="search__box">
-    <span class="search__string">Schwubbelparty wann?</span>
+    <span class="search__string"></span>
   </div>
 
 
